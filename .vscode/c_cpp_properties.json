@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/cantrell/programming/avr/packs/avr_dx/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/avr-gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerArgs": [
+                "-mmcu=avr128da28",     // Will ensure MCU defines are set correctly
+                "-DF_CPU=24000000UL",   // Will ensure F_CPU is set correctly
+                "-Os",                   // Will avoid optimization warnings re: _delay
+                "-B/home/cantrell/programming/avr/packs/avr_dx/gcc/dev/avr128da28",
+                "-I/home/cantrell/programming/avr/packs/avr_dx/include"
+            ]
+        }
+    ],
+    "version": 4
+}
