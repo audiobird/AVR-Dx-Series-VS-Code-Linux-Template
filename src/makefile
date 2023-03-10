@@ -14,9 +14,7 @@ BDIR=$(AVR_PACK_PATH)/gcc/dev/$(MMCU)/
 
 CFLAGS=-mmcu=$(MMCU) -B$(BDIR) -I$(LDIR) -I$(IDIR) -DF_CPU=$(FCPU) -Os
 
-#LIBS=-lm -lasound
-
-_DEPS =
+_DEPS = main.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ = main.o
@@ -29,7 +27,6 @@ $(ODIR)/%.o: %.c $(DEPS)
 
 $(PROGRAM_NAME): $(OBJ)
 	$(CC) -o $@.elf $^ $(CFLAGS) $(LIBS)
-
 
 .PHONY: clean bin all
 
